@@ -55,3 +55,7 @@ a {
   font-weight: normal;
   text-align: center;
 }
+
+.product-details-header {
+  display: flex;
+}

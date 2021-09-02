@@ -1,4 +1,5 @@
 import data from "../data.json";
+import data2 from "../data2.json";
 
 export default class DataRetreivalService {
   async requestProducts(size: number) {
@@ -14,7 +15,20 @@ export default class DataRetreivalService {
     return productsData.products.slice(0, size);
   }
 
+  async requestProductDetails(productId: string) {
+    const res = await fetch(
+      `https://api.johnlewis.com/mobile-apps/api/v1/products/${productId}`,
+      { mode: "cors" }
+    );
+    const productDetailsData = await res.json();
+    return productDetailsData;
+  }
+
   requestMockProducts(size: number) {
     return data.products.slice(0, size);
+  }
+
+  requestMockProductDetails(productId: string) {
+    return data2.detailsData.find((x) => x.productId === productId);
   }
 }
