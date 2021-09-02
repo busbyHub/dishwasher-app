@@ -1,0 +1,52 @@
+html {
+  font-family: "Gill Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dishwasher-image {
+  display: block;
+  width: clamp(200px, 75%, 686px);
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.product-list.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  padding-left: 0;
+}
+
+.container li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.product-details {
+  padding: 20px;
+}
+
+.product-details p {
+  margin: 0;
+  font-weight: bold;
+}
