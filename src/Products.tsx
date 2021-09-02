@@ -9,13 +9,13 @@ const Products: FunctionComponent = () => {
   useEffect(() => {
     // requestDishwasherData();
     const dataRetrievalService = new DataRetreivalService();
-    const mockProducts = dataRetrievalService.requestMockProducts();
+    const mockProducts = dataRetrievalService.requestMockProducts(20);
     setData(mockProducts);
   }, []);
 
   //   function requestDishwasherData() {
   //     const dataRetrievalService = new DataRetreivalService();
-  //     const products = dataRetrievalService.requestProducts();
+  //     const products = dataRetrievalService.requestProducts(20);
   //     setData(products);
   //   }
 
