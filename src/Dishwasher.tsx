@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   image: string;
@@ -10,20 +11,22 @@ interface Props {
 }
 
 const Dishwasher: FunctionComponent<Props> = (props) => {
-  const { title, price, image, width, height } = props;
+  const { title, price, image, width, productId, height } = props;
 
   return (
     <li>
-      <img
-        alt={title}
-        data-testid="image-testid"
-        className="dishwasher-image"
-        src={`https:${image}?wid=${width}&hei=${height}`}
-      />
-      <div className="product-details">
-        <h2 data-testid="details-testid">{title}</h2>
-        <p>£{price.now}</p>
-      </div>
+      <Link to={`/${productId}`}>
+        <img
+          alt={title}
+          data-testid="image-testid"
+          className="dishwasher-image"
+          src={`https:${image}?wid=${width}&hei=${height}`}
+        />
+        <div className="product-details">
+          <h2 data-testid="details-testid">{title}</h2>
+          <p>£{price.now}</p>
+        </div>
+      </Link>
     </li>
   );
 };

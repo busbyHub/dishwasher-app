@@ -8,7 +8,7 @@ const Products: FunctionComponent = () => {
 
   useEffect(() => {
     // requestDishwasherData();
-    const dataRetrievalService = new DataRetreivalService();
+    const dataRetrievalService: DataRetreivalService = new DataRetreivalService();
     const mockProducts = dataRetrievalService.requestMockProducts(20);
     setData(mockProducts);
   }, []);
