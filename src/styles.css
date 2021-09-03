@@ -8,8 +8,8 @@ body {
 
 h2 {
   font-family: "Gill Sans", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 1.1rem;
   margin: 0;
 }
 
@@ -21,12 +21,25 @@ a {
   text-decoration: none;
 }
 
+.app-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .dishwasher-image {
   display: block;
   width: clamp(200px, 75%, 686px);
   margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 10px;
+}
+
+img.dishwasher-image {
+  transition: transform 0.5s;
+}
+
+img.dishwasher-image:hover {
+  transform: scale(1.1);
 }
 
 .product-list.container {
@@ -47,6 +60,15 @@ a {
 }
 
 .product-details p {
+  font-size: 1rem;
+}
+
+a > .product-details h2,
+a > .product-details p {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.product-details p {
   margin: 0;
   font-weight: bold;
 }
@@ -54,8 +76,79 @@ a {
 .product-header {
   font-weight: normal;
   text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: clamp(1.1rem, 0.7153rem + 1.6368vw, 1.5rem);
+}
+
+/**
+* Product details
+**/
+
+.product-details-page {
+  margin: 20px 50px;
 }
 
 .product-details-header {
   display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: clamp(1rem, 1rem + 5vw, 4rem);
+}
+
+.product-details-image {
+  grid-area: image;
+}
+
+.product-details-image > img {
+  width: 100%;
+}
+
+.product-details-price-container {
+  grid-area: price;
+  padding: 20px 0;
+}
+
+.product-details-price {
+  font-size: 1.2rem;
+}
+
+.special-offer {
+  color: darkred;
+}
+
+.product-details-info {
+  grid-area: info;
+  max-width: 80%;
+}
+
+.product-details-info p {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/*
+** Media queries
+*/
+
+@media screen and (min-width: 769px) {
+  .product-detail-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 65% 30%;
+    grid-template-areas:
+      "image price"
+      "info ."
+      "spec spec";
+  }
+
+  .product-details-price {
+    font-size: 1.4rem;
+  }
+
+  .product-details-info {
+    max-width: 80%;
+  }
+
+  .product-details-image > img {
+    max-width: 70%;
+  }
 }
