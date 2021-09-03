@@ -7,5 +7,8 @@ Thanks for the opportunity to work on this tech test. I hope that this will give
 - The app works primarily for latest 2 Chrome versions. I can imagine at John Lewis, as I currently have to, you are catering for a wide array of clients/browsers. I have written applications that have customers using IE8+ in the past.
 - I have tried to write as much TypeScript as possible in the time, I'd have preferably mapped out the Api calls so that this would have been more fully featured and typed.
 
+Implementation:
+Running "npm i" will have the app up and running. It can be served with "npm run dev" and then proceed to "localhost:1234". Tests can be run with "npm run test".
+
 Many thanks
 Dominic
